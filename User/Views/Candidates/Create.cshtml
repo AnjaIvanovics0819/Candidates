@@ -1,0 +1,58 @@
+﻿@model User.Models.Candidate
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm("Create", "Candidates"))
+{
+    <table class="table table-bordered table-hover">
+        <tr>
+            <td>
+
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Name)
+
+            </td>
+            <td>
+
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email)
+
+            </td>
+            <td>
+
+                @Html.LabelFor(m => m.Phone)
+                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Phone)
+
+            </td>
+            <td>
+
+                @Html.LabelFor(m => m.FormName)
+                @Html.TextBoxFor(m => m.FormName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.FormName)
+
+            </td>
+            <td>
+
+                @Html.LabelFor(m => m.FormStatus)
+                @Html.TextBoxFor(m => m.FormStatus, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.FormStatus)
+
+            </td>
+
+            <td>
+                <br />
+                <button type="submit" class="btn btn-primary">Save</button>
+
+            </td>
+        </tr>
+    </table>
+
+        }

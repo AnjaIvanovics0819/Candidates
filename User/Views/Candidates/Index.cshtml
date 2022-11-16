@@ -1,0 +1,75 @@
+﻿@model IEnumerable<User.Models.Candidate>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Candidates</h2>
+<p>
+    @Html.ActionLink("Delete", "Delete", "Candidates", null, new {  @class = "btn btn-primary" })
+   
+</p>
+
+@if (!Model.Any())
+{
+    <p>We don't hane any candidates yet</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Form Name</th>
+                <th>Form Status</th>
+                <th>Action</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var candidate in Model)
+            {
+
+
+                <tr>
+                    <td>
+                        @candidate.Name
+
+                    </td>
+                    <td>
+                        @candidate.Email
+
+                    </td>
+                    <td>
+                        @candidate.Phone
+
+                    </td>
+                    <td>
+                        @candidate.FormName
+
+                    </td>
+                    <td>
+                        @candidate.FormStatus
+
+                    </td>
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <td>
+
+                            @Html.ActionLink("Delete", "Delete", "Candidates", new { id = candidate.Id }, null) /  @Html.ActionLink("View", "Details", "Candidates", new { id = candidate.Id }, null)
+
+                        </td>
+
+                    }
+                    </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+

@@ -1,0 +1,62 @@
+﻿@model User.Models.Candidate
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Form </th>
+            <th>Status</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+
+
+
+        <tr>
+            <td>
+                @Model.Id
+
+            </td>
+            <td>
+                @Model.Name
+
+            </td>
+            <td>
+                @Model.Phone
+
+            </td>
+            <td>
+                @Model.Email
+
+            </td>
+            <td>
+                @Model.FormName
+
+            </td>
+            <td>
+                @Model.FormStatus
+
+            </td>
+
+
+
+
+
+        </tr>
+
+    </tbody>
+</table>
